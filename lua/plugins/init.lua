@@ -1,4 +1,6 @@
 return {
+
+  -- conform.nvim is a plugin that helps you to format your code
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
@@ -7,6 +9,7 @@ return {
     end,
   },
 
+  -- hop.nvim use SPC + f + j to jump to word
   {
     "smoka7/hop.nvim",
     opts = {
@@ -24,6 +27,8 @@ return {
       },
     },
   },
+
+  -- copilot.vim is a plugin that helps you to use GitHub Copilot in Neovim
   {
     "github/copilot.vim",
     lazy = false,
@@ -31,12 +36,10 @@ return {
       vim.g.copilot_no_tab_map = true
       vim.g.copilot_assume_mapped = true
       vim.g.copilot_tab_fallback = ""
-      -- The mapping is set to other key, see custom/lua/mappings
-      -- or run <leader>ch to see copilot mapping section
     end,
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
+  -- mason, nvim-lspconfig, nvim-treesitter
   {
     "williamboman/mason.nvim",
     opts = {
