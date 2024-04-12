@@ -1,12 +1,22 @@
 return {
 
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return require "configs.null-ls"
-    end,
-  },
+    {
+        "nvimdev/dashboard-nvim",
+        event = "VimEnter",
+        config = function()
+            -- require("dashboard").setup {}
+
+            require "configs.dashboard"
+        end,
+        dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    },
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        event = "VeryLazy",
+        opts = function()
+            return require "configs.null-ls"
+        end,
+    },
     -- conform.nvim is a plugin that helps you to format your code
     {
         "stevearc/conform.nvim",
