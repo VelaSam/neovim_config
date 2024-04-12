@@ -75,6 +75,8 @@ return {
                 "typescript",
                 "javascript",
                 "json",
+                "cpp",
+                "c",
             },
         },
     },
