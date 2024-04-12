@@ -1,2 +1,2 @@
-# starter
-Starter config for NvChad
+Insane neovim config for gigachads
+
