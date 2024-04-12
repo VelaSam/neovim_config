@@ -1,5 +1,4 @@
 return {
-
     -- conform.nvim is a plugin that helps you to format your code
     {
         "stevearc/conform.nvim",
@@ -50,10 +49,11 @@ return {
                 "css-lsp",
                 "prettier",
                 "typescript-language-server",
-      },
+                "clangd",
             },
         },
     },
+
     {
         "neovim/nvim-lspconfig",
         config = function()
