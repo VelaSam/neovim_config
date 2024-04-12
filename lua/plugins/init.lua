@@ -1,4 +1,12 @@
 return {
+
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "configs.null-ls"
+    end,
+  },
     -- conform.nvim is a plugin that helps you to format your code
     {
         "stevearc/conform.nvim",
@@ -50,6 +58,7 @@ return {
                 "prettier",
                 "typescript-language-server",
                 "clangd",
+                "clang-format",
             },
         },
     },
