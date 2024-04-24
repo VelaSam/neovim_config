@@ -1,11 +1,11 @@
 return 
 {
-
+	{"nvim-tree/nvim-tree.lua"},
+{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
 {
     "williamboman/mason.nvim"
 },
-	{"sbdchd/neoformat"},
 	{
 		"folke/which-key.nvim",
 	},
@@ -26,7 +26,6 @@ return
             },
         },
     },
-
 
 
 }
