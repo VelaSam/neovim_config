@@ -9,7 +9,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("i", ";;", ";<ESC>")
 map({ "i", "v" }, "<C-s>", "<ESC>:w<CR>")
-
+map("v", "J", ":m '>+1<CR>gv=gv") vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Add Copilot mappings
 M.copilot = {
     i = {
