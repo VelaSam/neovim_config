@@ -1,3 +1,4 @@
+--SETUP MY OPTIONS
 require "velasam.options"
 
 --lazy setup
@@ -15,15 +16,18 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--SETUP MY PLUGINS
 require("lazy").setup(require("velasam.plugins"))
 
+-- Couple of things
 require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
-
-require("velasam.mappings")
-
 vim.cmd.colorscheme "github_dark"
-
-
 vim.api.nvim_create_autocmd({"VimEnter"}, {
 command = "Alpha"
 })
+
+--SETUP MY MAPPINGS
+require("velasam.mappings")
+
+
+
