@@ -1,9 +1,6 @@
-vim.g.mapleader = " "
+require "velasam.options"
 
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
+--lazy setup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -18,12 +15,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = require "velasam.plugins"
+require("lazy").setup(require("velasam.plugins"))
 
-require("lazy").setup(plugins)
+require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
+
+require("velasam.mappings")
+
+vim.cmd.colorscheme "github_dark"
 
 
-require("nvim-tree").setup()
-
-require("velasam")
-vim.cmd.colorscheme "catppuccin"
+vim.api.nvim_create_autocmd({"VimEnter"}, {
+command = "Alpha"
+})
