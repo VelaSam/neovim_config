@@ -6,7 +6,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 
 --nvim tree keymaps
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<C-n>', '<ESC>:NvimTreeToggle<CR>')
 
 --telescope keymaps
 local builtin = require('telescope.builtin')
