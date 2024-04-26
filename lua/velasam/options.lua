@@ -12,10 +12,18 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.breakindent = true
+--indents
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+-- this is when the next line kinda goes over the next one instead of just gonig out of screen. Hate it 
+vim.opt.wrap = false
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+
 vim.opt.cursorline = true
 vim.opt.undofile = true
 
@@ -26,13 +34,16 @@ vim.opt.updatetime = 250
 -- time for you to do the keybinds in miliseconds
 -- vim.opt.timeoutlen = 300
 
--- split right: <C-w> and then v 
+-- split right: <C-w> and then v
 vim.opt.splitright = true
 --split beloe <C-w> and then s
 vim.opt.splitbelow = true
 
 vim.opt.list = true
-vim.opt.listchars = {tab = '» ', trail = '.', nbsp = '␣' }
+vim.opt.listchars = {tab = '▸ ', trail = '■', nbsp = '␣' }
+
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
 

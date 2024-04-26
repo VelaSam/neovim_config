@@ -1,9 +1,22 @@
 -- CTRL + S to save 
 vim.keymap.set({"n", "i", "v"}, "<C-s>", "<ESC>:w<CR>")
 
+-- move with shift and J or K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+
+-- ctrl d and ctrl u
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+--stay in middle of screen when searching
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+vim.keymap.set('x', '<leader>p', "\"_dP")
+
+--note: I love :%s/before/after/gc
 
 --nvim tree keymaps
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
