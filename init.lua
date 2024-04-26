@@ -22,8 +22,13 @@ require("lazy").setup(require("velasam.plugins"))
 -- Couple of things
 require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
 vim.cmd.colorscheme "github_dark"
+
+
 vim.api.nvim_create_autocmd({"VimEnter"}, {
-command = "Alpha"
+  command = "NvimTreeToggle"
+})
+vim.api.nvim_create_autocmd({"VimEnter"}, {
+  command = "Alpha"
 })
 
 --SETUP MY MAPPINGS
