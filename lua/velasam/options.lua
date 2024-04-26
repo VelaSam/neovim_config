@@ -15,7 +15,7 @@ vim.opt.smartcase = true
 vim.opt.breakindent = true
 
 vim.wo.relativenumber = true
-
+vim.opt.cursorline = true
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
