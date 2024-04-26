@@ -21,7 +21,10 @@ require("lazy").setup(require("velasam.plugins"))
 
 -- Couple of things
 require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
-vim.cmd.colorscheme "github_dark"
+vim.cmd.colorscheme "catppuccin"
+
+--setup bufferline (the plugin that puts the tabs at the top)
+require "velasam.configs.bufferline"
 
 
 vim.api.nvim_create_autocmd({"VimEnter"}, {
