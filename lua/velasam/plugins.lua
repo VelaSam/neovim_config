@@ -1,5 +1,5 @@
 return {
-  require "velasam.configs.treesitter",
+  {{{require "velasam.configs.treesitter"}}},
   {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
   { 'tpope/vim-sleuth', enabled = true },
   { 'numToStr/Comment.nvim', opts = {} },
