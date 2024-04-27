@@ -38,6 +38,7 @@ vim.api.nvim_create_autocmd({"VimEnter"}, {
 
 --SETUP MY MAPPINGS
 require("velasam.mappings")
-
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "cyberdream"
+-- require "velasam.configs.cyberdream"
+-- vim.cmd.colorscheme "catppuccin"
 

@@ -10,4 +10,12 @@ return {
   {require "velasam.configs.alpha"},
   {require "velasam.configs.telescope"},
   {require "velasam.configs.themes"},
+  {
+      "scottmckendry/cyberdream.nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+            require("velasam.configs.cyberdream")
+      end,
+  },
 }
