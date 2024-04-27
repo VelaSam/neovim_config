@@ -1,3 +1,1 @@
-require("bufferline").setup{
-  print("hello from the bufferline")
-}
+{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
