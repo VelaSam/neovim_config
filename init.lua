@@ -16,15 +16,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 --SETUP MY PLUGINS
 require("lazy").setup(require("velasam.plugins"))
-
--- Couple of things
 require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
-vim.cmd.colorscheme "catppuccin"
-
---setup bufferline (the plugin that puts the tabs at the top)
-require "velasam.configs.bufferline"
+require("bufferline").setup{}
 
 
 vim.api.nvim_create_autocmd({"VimEnter"}, {
@@ -32,10 +28,16 @@ vim.api.nvim_create_autocmd({"VimEnter"}, {
 })
 vim.api.nvim_create_autocmd({"VimEnter"}, {
   command = "Alpha"
-})
+ })
+
+--if you want the tree to be opened went you enter, uncomment these lines
+
+-- vim.api.nvim_create_autocmd({"VimEnter"}, {
+--   command = "NvimTreeToggle"
+-- })
 
 --SETUP MY MAPPINGS
 require("velasam.mappings")
 
-
+vim.cmd.colorscheme "catppuccin"
 
