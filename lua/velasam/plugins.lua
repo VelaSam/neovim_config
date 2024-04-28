@@ -1,9 +1,19 @@
 return {
   {require "velasam.configs.treesitter"},
-  { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+  { 'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup{}
+    end,
+  },
   { 'tpope/vim-sleuth', enabled = true },
   { 'numToStr/Comment.nvim', opts = {} },
-  { "nvim-tree/nvim-tree.lua" },
+  { "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
+    end
+  },
   { "nvim-tree/nvim-web-devicons" },
   {require "velasam.configs.gitsigns"},
   {require "velasam.configs.hop"},

@@ -1,7 +1,7 @@
---SETUP MY OPTIONS
+-- OPTIONS
 require "velasam.options"
 
---lazy setup
+--LAZY
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,11 +16,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
---SETUP MY PLUGINS
 require("lazy").setup(require("velasam.plugins"))
-require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
-require("bufferline").setup{}
+
+
+--MAPPINGS
+require("velasam.mappings")
+vim.cmd.colorscheme "catppuccin"
 
 
 vim.api.nvim_create_autocmd({"VimEnter"}, {
@@ -29,16 +30,7 @@ vim.api.nvim_create_autocmd({"VimEnter"}, {
 vim.api.nvim_create_autocmd({"VimEnter"}, {
   command = "Alpha"
  })
-
 --if you want the tree to be opened went you enter, uncomment these lines
-
 -- vim.api.nvim_create_autocmd({"VimEnter"}, {
 --   command = "NvimTreeToggle"
 -- })
-
---SETUP MY MAPPINGS
-require("velasam.mappings")
-vim.cmd.colorscheme "cyberdream"
--- require "velasam.configs.cyberdream"
--- vim.cmd.colorscheme "catppuccin"
-
