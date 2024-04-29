@@ -64,10 +64,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- this is a test because I am not sure what autocmd does but it looks cool
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.c", "*.h"},
-  command = "echo 'Entering a C or C++ file'",
-})
-

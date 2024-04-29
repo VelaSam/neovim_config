@@ -21,6 +21,8 @@ vim.keymap.set('x', '<leader>p', "\"_dP")
 --nvim tree keymaps
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
 
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
 --telescope keymaps
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = '[F]ind [F]ile'})
@@ -43,3 +45,4 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 -- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
