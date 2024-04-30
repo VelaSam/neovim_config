@@ -1,5 +1,5 @@
 -- CTRL + S to save 
-vim.keymap.set({"n", "i", "v"}, "<C-s>", "<ESC>:w<CR>")
+vim.keymap.set({"n", "i", "v"}, "<C-s>", "<ESC>:w<CR>", {desc = 'Save file'})
 
 -- move with shift and J or K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -37,10 +37,10 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '')
+vim.keymap.set('n', '<right>', '')
+vim.keymap.set('n', '<up>', '')
+vim.keymap.set('n', '<down>', '')
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode

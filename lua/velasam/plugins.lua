@@ -20,17 +20,24 @@ return {
   {require "velasam.configs.alpha"},
   {require "velasam.configs.telescope"},
   {require "velasam.configs.themes"},
-  {
-      "scottmckendry/cyberdream.nvim",
-      lazy = false,
-      priority = 1000,
-      config = function()
-            require("velasam.configs.cyberdream")
-      end,
-  },
   {'norcalli/nvim-colorizer.lua',
     config = function()
       require'colorizer'.setup()
     end
   },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+  { "folke/neoconf.nvim", cmd = "Neoconf" },
+  {"folke/neodev.nvim"},
 }

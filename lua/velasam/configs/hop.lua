@@ -8,7 +8,7 @@ return
     },
     keys = {
       {
-        "<leader>fj",
+        "<leader>fj", desc = 'hop.nvim',
         function()
           require("hop").hint_words()
         end,
