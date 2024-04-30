@@ -13,7 +13,7 @@ function greet(name) {
 function main() {
   rl.question('Welcome to the greeting program!\nEnter your name: ', (name) => {
     greet(name);
-    
+
     rl.question('Would you like to be greeted again? (yes/no) ', (response) => {
       if (response.toLowerCase() === 'yes') {
         rl.question('Enter another name: ', (anotherName) => {

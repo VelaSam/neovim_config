@@ -40,4 +40,7 @@ return {
   },
   { "folke/neoconf.nvim", cmd = "Neoconf" },
   {"folke/neodev.nvim"},
+  {"stevearc/dressing.nvim",
+    event = "VeryLazy",
+  },
 }
