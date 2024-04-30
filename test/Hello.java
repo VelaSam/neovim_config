@@ -28,5 +28,13 @@ public class Hello {
 
     public static void greet(String name) {
         System.out.println("Hello, " + name + "!");
+        System.out.println("asjdkajsda");
+        System.out.println();
+        String hello = "hello"
+        if(hello.equals("hello"){
+
+        }
+
     }
+
 }

@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 function greet(name) {
   console.log(`Hello, ${name}!`);
 }
-
+asksjdaksjdkjasd
 function main() {
   rl.question('Welcome to the greeting program!\nEnter your name: ', (name) => {
     greet(name);
@@ -29,3 +29,5 @@ function main() {
 }
 
 main();
+
+let lol = {1,2,3,4};
