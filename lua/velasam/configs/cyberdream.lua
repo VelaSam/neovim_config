@@ -3,7 +3,7 @@ require("cyberdream").setup({
     transparent = true, -- Default: false
 
     -- Enable italics comments
-    italic_comments = true, -- Default: false
+    italic_comments = false, -- Default: false
 
     -- Replace all fillchars with ' ' for the ultimate clean look
     hide_fillchars = true, -- Default: false

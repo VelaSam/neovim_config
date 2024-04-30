@@ -28,4 +28,9 @@ return {
             require("velasam.configs.cyberdream")
       end,
   },
+  {'norcalli/nvim-colorizer.lua',
+    config = function()
+      require'colorizer'.setup()
+    end
+  },
 }
