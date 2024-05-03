@@ -46,4 +46,9 @@ return {
       -- use opts = {} for passing setup options
       -- this is equalent to setup({}) function
   },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
+    config = function()
+      require("ibl").setup()
+    end
+  }
 }

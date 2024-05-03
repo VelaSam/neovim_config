@@ -16,7 +16,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(require("velasam.plugins"))
+require("lazy").setup({
+  {
+    import = "velasam.plugins"
+  },
+  {
+    import =  "velasam.lsp"
+  }
+})
 
 
 --MAPPINGS
