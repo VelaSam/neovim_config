@@ -20,9 +20,9 @@ require("lazy").setup({
   {
     import = "velasam.plugins"
   },
-  {
-    import =  "velasam.lsp"
-  }
+  -- {
+  --   import =  "velasam.lsp"
+  -- }
 })
 
 
