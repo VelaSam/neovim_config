@@ -1,5 +1,7 @@
 return {
   {require "velasam.configs.treesitter"},
+  {require "velasam.lsp.mason"},
+  {require "velasam.lsp.lspconfig"},
   { 'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
@@ -32,8 +34,6 @@ return {
     event = "VeryLazy",
   },
   {require "velasam.configs.nvim-cmp"},
-  {require "velasam.lsp.mason"},
-  {require "velasam.lsp.lspconfig"},
   {
       'windwp/nvim-autopairs',
       event = "InsertEnter",
