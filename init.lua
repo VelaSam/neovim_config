@@ -1,4 +1,5 @@
 -- OPTIONS
+--
 require "velasam.options"
 
 --LAZY
@@ -28,7 +29,7 @@ require("lazy").setup({
 
 --MAPPINGS
 require("velasam.mappings")
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "cyberdream"
 
 
 vim.api.nvim_create_autocmd({"VimEnter"}, {
