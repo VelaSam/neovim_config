@@ -56,4 +56,12 @@ return {
       require('feline').setup()
     end
   },
+  {
+    'gelguy/wilder.nvim',
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({modes = {':', '/', '?'}})
+    end,
+  },
+
 }
