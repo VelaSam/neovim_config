@@ -32,13 +32,8 @@ return {
     event = "VeryLazy",
   },
   {require "velasam.configs.nvim-cmp"},
-  -- {"williamboman/mason.nvim",
-  --   config = function()
-  --       require("mason").setup()
-  --   end
-  -- },
-  -- {"williamboman/mason-lspconfig.nvim"},
-  -- {"neovim/nvim-lspconfig"},
+  {require "velasam.lsp.mason"},
+  {require "velasam.lsp.lspconfig"},
   {
       'windwp/nvim-autopairs',
       event = "InsertEnter",
@@ -51,4 +46,17 @@ return {
       require("ibl").setup()
     end
   },
+  {'feline-nvim/feline.nvim',
+    config = function()
+      require('feline').setup()
+    end
+  },
+  {
+    'gelguy/wilder.nvim',
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({modes = {':', '/', '?'}})
+    end,
+  },
+
 }
