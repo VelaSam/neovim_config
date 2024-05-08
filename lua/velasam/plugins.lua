@@ -32,13 +32,8 @@ return {
     event = "VeryLazy",
   },
   {require "velasam.configs.nvim-cmp"},
-  -- {"williamboman/mason.nvim",
-  --   config = function()
-  --       require("mason").setup()
-  --   end
-  -- },
-  -- {"williamboman/mason-lspconfig.nvim"},
-  -- {"neovim/nvim-lspconfig"},
+  {require "velasam.lsp.mason"},
+  {require "velasam.lsp.lspconfig"},
   {
       'windwp/nvim-autopairs',
       event = "InsertEnter",
