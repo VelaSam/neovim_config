@@ -105,6 +105,7 @@ return {
           capabilities = capabilities,
         })
       end,
+
       ["svelte"] = function()
         -- configure svelte server
         lspconfig["svelte"].setup({

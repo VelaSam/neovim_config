@@ -30,6 +30,7 @@ return {
         "black", -- python formatter
         "pylint",
         "eslint_d",
+        "angular-language-server",
       },
     })
   end,
