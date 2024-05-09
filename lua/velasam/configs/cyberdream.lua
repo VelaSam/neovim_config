@@ -44,7 +44,7 @@ require("cyberdream").setup({
             -- orange = "#ffbd5e",
             -- purple = "#bd5eff",
             bg = "#000000",
-            green = "#00ff00",
+            green = "#149200",
             magenta = "#ff00ff",
         },
     },
