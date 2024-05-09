@@ -14,6 +14,9 @@ return {
   { "nvim-tree/nvim-tree.lua",
     config = function()
       require("nvim-tree").setup(require("velasam.configs.nvim-tree"))
+      --nvim tree keymaps
+      vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+      vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
     end
   },
   { "nvim-tree/nvim-web-devicons" },
@@ -58,5 +61,13 @@ return {
       wilder.setup({modes = {':', '/', '?'}})
     end,
   },
+  {'akinsho/toggleterm.nvim', version = "*",
+    config = function ()
+      require("toggleterm").setup{}
 
+      vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>')
+      vim.keymap.set('i', '<leader>t', ':ToggleTerm<CR>')
+      vim.keymap.set('t', '<leader>t', ':ToggleTerm<CR>')
+    end
+  },
 }

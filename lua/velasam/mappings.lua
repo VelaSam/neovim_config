@@ -1,35 +1,19 @@
 -- CTRL + S to save 
 vim.keymap.set({"n", "i", "v"}, "<C-s>", "<ESC>:w<CR>", {desc = 'Save file'})
 
--- move with shift and J or K
+-- move entire lines with shift and J or K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-
--- ctrl d and ctrl u
+-- ctrl d and ctrl u stay in the middle of the screen
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
---stay in middle of screen when searching
+--stay in middle of screen when scrolling throuh searches
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('x', '<leader>p', "\"_dP")
-
---note: I love :%s/before/after/gc
-
---nvim tree keymaps
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
-
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
---telescope keymaps
--- local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = '[F]ind [F]ile'})
--- vim.keymap.set('n', '<leader>fw', builtin.live_grep, {desc = '[F]ind [W]ord'}) 
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc = '[F]ind [B]uffer'})
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc = '[F]ind [H]elp'})
-
 
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -42,6 +26,7 @@ vim.keymap.set('n', '<right>', '')
 vim.keymap.set('n', '<up>', '')
 vim.keymap.set('n', '<down>', '')
 
+vim.keymap.set('i', 'jk', '<ESC>')
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 -- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
