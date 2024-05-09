@@ -49,9 +49,12 @@ return {
       require("ibl").setup()
     end
   },
-  {'feline-nvim/feline.nvim',
-    config = function()
-      require('feline').setup()
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+      -- require("velasam.configs.lualine")
+      require("lualine").setup()
     end
   },
   {
@@ -67,7 +70,17 @@ return {
 
       vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>')
       vim.keymap.set('i', '<leader>t', ':ToggleTerm<CR>')
-      vim.keymap.set('t', '<leader>t', ':ToggleTerm<CR>')
+      -- vim.keymap.set('t', '<leader>t', ':ToggleTerm<CR>')
     end
   },
+  {
+    "tadmccorkle/markdown.nvim",
+    ft = "markdown", -- or 'event = "VeryLazy"'
+    opts = {
+      -- configuration here or empty for defaults
+    },
+    config = function ()
+      require("markdown").setup()
+    end
+  }
 }
