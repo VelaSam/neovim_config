@@ -85,7 +85,7 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"tsserver",
-				"html",
+				-- "html",
 				"cssls",
 				"tailwindcss",
 				"svelte",
@@ -105,21 +105,21 @@ return {
 				})
 			end,
 
-			["svelte"] = function()
-				-- configure svelte server
-				lspconfig["svelte"].setup({
-					capabilities = capabilities,
-					on_attach = function(client, bufnr)
-						vim.api.nvim_create_autocmd("BufWritePost", {
-							pattern = { "*.js", "*.ts" },
-							callback = function(ctx)
-								-- Here use ctx.match instead of ctx.file
-								client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-							end,
-						})
-					end,
-				})
-			end,
+			-- ["svelte"] = function()
+			-- 	-- configure svelte server
+			-- 	lspconfig["svelte"].setup({
+			-- 		capabilities = capabilities,
+			-- 		on_attach = function(client, bufnr)
+			-- 			vim.api.nvim_create_autocmd("BufWritePost", {
+			-- 				pattern = { "*.js", "*.ts" },
+			-- 				callback = function(ctx)
+			-- 					-- Here use ctx.match instead of ctx.file
+			-- 					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+			-- 				end,
+			-- 			})
+			-- 		end,
+			-- 	})
+			-- end,
 			["graphql"] = function()
 				-- configure graphql language server
 				lspconfig["graphql"].setup({
@@ -132,7 +132,7 @@ return {
 				lspconfig["emmet_ls"].setup({
 					capabilities = capabilities,
 					filetypes = {
-						"html",
+						-- "html",
 						"typescriptreact",
 						"javascriptreact",
 						"css",

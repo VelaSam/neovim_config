@@ -24,7 +24,7 @@ return {
 	{ "nvim-tree/nvim-web-devicons" },
 	{ require("velasam.configs.gitsigns") },
 	{ require("velasam.configs.hop") },
-	{ require("velasam.configs.alpha") },
+	-- { require("velasam.configs.alpha") },
 	{ require("velasam.configs.telescope") },
 	{ require("velasam.configs.themes") },
 	{
@@ -115,47 +115,6 @@ return {
 		end,
 	},
 	{
-		"chentoast/marks.nvim",
-		config = function()
-			require("marks").setup({
-				-- whether to map keybinds or not. default true
-				default_mappings = true,
-				-- which builtin marks to show. default {}
-				builtin_marks = { ".", "<", ">", "^" },
-				-- whether movements cycle back to the beginning/end of buffer. default true
-				cyclic = true,
-				-- whether the shada file is updated after modifying uppercase marks. default false
-				force_write_shada = false,
-				-- how often (in ms) to redraw signs/recompute mark positions.
-				-- higher values will have better performance but may cause visual lag,
-				-- while lower values may cause performance penalties. default 150.
-				refresh_interval = 250,
-				-- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
-				-- marks, and bookmarks.
-				-- can be either a table with all/none of the keys, or a single number, in which case
-				-- the priority applies to all marks.
-				-- default 10.
-				sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
-				-- disables mark tracking for specific filetypes. default {}
-				excluded_filetypes = {},
-				-- disables mark tracking for specific buftypes. default {}
-				excluded_buftypes = {},
-				-- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
-				-- sign/virttext. Bookmarks can be used to group together positions and quickly move
-				-- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
-				-- default virt_text is "".
-				bookmark_0 = {
-					sign = "⚑",
-					virt_text = "hello world",
-					-- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
-					-- defaults to false.
-					annotate = false,
-				},
-				mappings = {},
-			})
-		end,
-	},
-	{
 		"stevearc/conform.nvim",
 		config = function()
 			require("conform").setup({
@@ -164,15 +123,88 @@ return {
 					-- Conform will run multiple formatters sequentially
 					python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter
-					javascript = { { "prettierd", "prettier" } },
+					-- javascript = { { "prettier" } },
+					-- typescript = { { "prettierd", "prettier" } },
 				},
 			})
-
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*",
 				callback = function(args)
 					require("conform").format({ bufnr = args.buf })
 				end,
+			})
+		end,
+	},
+	{
+		"github/copilot.vim",
+		config = function()
+			vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
+				expr = true,
+				replace_keycodes = false,
+			})
+			vim.g.copilot_no_tab_map = true
+		end,
+	},
+	-- {
+	-- 	"dense-analysis/ale",
+	-- 	config = function()
+	-- 		-- Install ALE if you haven't already
+	-- 		-- Use your preferred plugin manager, e.g., Packer, Vim-Plug, etc.
+	--
+	-- 		-- Configure ALE to use ESLint for JavaScript files
+	-- 		vim.g.ale_linters_explicit = true
+	-- 		vim.g.ale_linters = {
+	-- 			javascript = { "eslint" },
+	-- 			typescript = { "eslint" },
+	-- 		}
+	--
+	-- 		-- Enable ALE to automatically fix linting issues on save
+	-- 		vim.g.ale_fixers = {
+	-- 			javascript = { "eslint" },
+	-- 			typescript = { "eslint" },
+	-- 		}
+	-- 		vim.g.ale_fix_on_save = 1
+	-- 	end,
+	-- },
+	{
+		"joeveiga/ng.nvim",
+		config = function()
+			local opts = { noremap = true, silent = true }
+			local ng = require("ng")
+			vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
+			vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
+			vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
+		end,
+	},
+	{
+
+		"neovim/nvim-lspconfig",
+		"jose-elias-alvarez/null-ls.nvim",
+		"MunifTanjim/eslint.nvim",
+		config = function()
+			local null_ls = require("null-ls")
+			local eslint = require("eslint")
+
+			null_ls.setup()
+
+			eslint.setup({
+				bin = "eslint", -- or `eslint_d`
+				code_actions = {
+					enable = true,
+					apply_on_save = {
+						enable = true,
+						types = { "directive", "problem", "suggestion", "layout" },
+					},
+					disable_rule_comment = {
+						enable = true,
+						location = "separate_line", -- or `same_line`
+					},
+				},
+				diagnostics = {
+					enable = true,
+					report_unused_disable_directives = false,
+					run_on = "type", -- or `save`
+				},
 			})
 		end,
 	},

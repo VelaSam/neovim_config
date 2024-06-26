@@ -1,10 +1,7 @@
-
-// Define a class called File
-class File {
+public class File {
     private fileName: string;
     private fileSize: number;
 
-    // Constructor to initialize fileName and fileSize
     constructor(fileName: string, fileSize: number) {
         this.fileName = fileName;
         this.fileSize = fileSize;
