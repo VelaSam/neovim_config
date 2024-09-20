@@ -107,6 +107,7 @@ return {
 		end,
 	},
 	{ "akinsho/toggleterm.nvim" },
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 	{ require("velasam.plugins.telescope") },
 	{ require("velasam.plugins.mason") },
 	{ require("velasam.plugins.cmp") },
