@@ -1,12 +1,21 @@
 return {
 	"folke/which-key.nvim",
 	"folke/lazydev.nvim",
+	"ThePrimeagen/harpoon",
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "EdenEast/nightfox.nvim" },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "norcalli/nvim-colorizer.lua" },
 	{ require("velasam.plugins.gitsigns") },
+	{ require("velasam.plugins.hop") },
+	{
+		"gelguy/wilder.nvim",
+		config = function()
+			local wilder = require("wilder")
+			wilder.setup({ modes = { ":", "/", "?" } })
+		end,
+	},
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
@@ -106,7 +115,31 @@ return {
 			require("tabby").setup({ tabline = line })
 		end,
 	},
-	{ "akinsho/toggleterm.nvim" },
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = function()
+			require("toggleterm").setup({
+				shell = "powershell.exe",
+				float_opts = {
+					border = "curved",
+					width = math.ceil(vim.o.columns * 0.8),
+					height = math.ceil(vim.o.columns * 0.2),
+				},
+			})
+			vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
+		end,
+	},
+	{
+		"github/copilot.vim",
+		config = function()
+			vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
+				expr = true,
+				replace_keycodes = false,
+			})
+			vim.g.copilot_no_tab_map = true
+		end,
+	},
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
