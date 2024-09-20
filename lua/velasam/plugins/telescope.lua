@@ -22,14 +22,5 @@ return {
 			},
 		})
 		telescope.load_extension("fzf")
-
-		--telescope keymaps
-		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "[F]ind [F]ile" })
-		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "[F]ind [W]tring" })
-		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[F]ind [R]ecent" })
-		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffer" })
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
-		vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "[F]ind string under [C]ursor" })
 	end,
 }

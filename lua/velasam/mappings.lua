@@ -18,16 +18,21 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 --note: I love :%s/before/after/gc
 
 --nvim tree keymaps
-vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle Tree" })
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 --telescope keymaps
--- local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = '[F]ind [F]ile'})
--- vim.keymap.set('n', '<leader>fw', builtin.live_grep, {desc = '[F]ind [W]ord'})
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc = '[F]ind [B]uffer'})
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc = '[F]ind [H]elp'})
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]ile" })
+vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "[F]ind [W]ord" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffer" })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
+vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find File but like VScode" })
+
+--markdown and plantuml
+vim.keymap.set("n", "<leader>md", ":MarkdownPreview<CR>", { desc = "Preview Markdown in browser" })
+vim.keymap.set("n", "<leader>puml", ":PlantumlOpen<CR>", { desc = "Open plantuml in browser" })
 
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
