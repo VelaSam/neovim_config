@@ -107,7 +107,18 @@ return {
 		end,
 	},
 	{ "akinsho/toggleterm.nvim" },
-	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && npm install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
+	{ "weirongxu/plantuml-previewer.vim" },
+	{ "tyru/open-browser.vim" },
+	{ "nvim-tree/nvim-web-devicons" },
 	{ require("velasam.plugins.telescope") },
 	{ require("velasam.plugins.mason") },
 	{ require("velasam.plugins.cmp") },
