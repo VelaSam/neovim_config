@@ -25,7 +25,7 @@ return {
 
 		--telescope keymaps
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]ile" })
+		vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "[F]ind [F]ile" })
 		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "[F]ind [W]tring" })
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[F]ind [R]ecent" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffer" })

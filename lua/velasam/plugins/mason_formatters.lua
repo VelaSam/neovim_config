@@ -7,7 +7,7 @@ null_ls.setup({
 		require("none-ls.diagnostics.eslint_d"),
 		require("none-ls.formatting.eslint_d"),
 		null_ls.builtins.formatting.prettierd,
-		-- null_ls.builtins.completion.spell,
+		null_ls.builtins.formatting.clang_format,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
@@ -29,5 +29,5 @@ null_ls.setup({
 })
 
 require("mason-null-ls").setup({
-	ensure_installed = { "stylua", "eslint_d", "prettierd" },
+	ensure_installed = { "stylua", "eslint_d", "prettierd", "clang-format" },
 })

@@ -106,6 +106,7 @@ return {
 			require("tabby").setup({ tabline = line })
 		end,
 	},
+	{ "akinsho/toggleterm.nvim" },
 	{ require("velasam.plugins.telescope") },
 	{ require("velasam.plugins.mason") },
 	{ require("velasam.plugins.cmp") },

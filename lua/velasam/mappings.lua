@@ -18,7 +18,7 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 --note: I love :%s/before/after/gc
 
 --nvim tree keymaps
-vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 

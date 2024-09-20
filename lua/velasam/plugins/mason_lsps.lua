@@ -45,15 +45,6 @@ require("mason-lspconfig").setup({
 			local current_dir = vim.fn.getcwd()
 			local init_options = {}
 
-			-- If we are in a Sombra project, we want to use relative imports
-			if current_dir:find("civalgo/sombra", 1, true) then
-				init_options = {
-					preferences = {
-						importModuleSpecifierPreference = "relative",
-						importModuleSpecifierEnding = "minimal",
-					},
-				}
-			end
 			lspconfig.ts_ls.setup({
 				init_options = init_options,
 				capabilities = lsp_capabilities,
