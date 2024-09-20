@@ -1,12 +1,20 @@
 return {
-	"folke/which-key.nvim",
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {},
+	},
 	"folke/lazydev.nvim",
-	"ThePrimeagen/harpoon",
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "EdenEast/nightfox.nvim" },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "norcalli/nvim-colorizer.lua" },
+	{ require("velasam.plugins.harpoon") },
 	{ require("velasam.plugins.gitsigns") },
 	{ require("velasam.plugins.hop") },
 	{

@@ -34,6 +34,38 @@ vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find File but like VS
 vim.keymap.set("n", "<leader>md", ":MarkdownPreview<CR>", { desc = "Preview Markdown in browser" })
 vim.keymap.set("n", "<leader>puml", ":PlantumlOpen<CR>", { desc = "Open plantuml in browser" })
 
+--harpoon
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+vim.keymap.set("n", "ma", mark.add_file, { desc = "add a file to marks" })
+vim.keymap.set("n", "mm", ui.toggle_quick_menu, { desc = "toggle quick menu" })
+
+vim.keymap.set("n", "mh", function()
+	ui.nav_file(1)
+end)
+
+vim.keymap.set("n", "mj", function()
+	ui.nav_file(2)
+end)
+
+vim.keymap.set("n", "mk", function()
+	ui.nav_file(3)
+end)
+
+vim.keymap.set("n", "ml", function()
+	ui.nav_file(4)
+end)
+
+for i = 1, 9 do
+	vim.keymap.set("n", "m" .. i, function()
+		ui.nav_file(i)
+	end)
+end
+
+vim.keymap.set("n", "mi", ui.nav_next, { desc = "next mark" })
+vim.keymap.set("n", "mo", ui.nav_prev, { desc = "previous mark" })
+--harpoon end
+
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
