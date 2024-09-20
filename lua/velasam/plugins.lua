@@ -6,7 +6,7 @@ return {
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "norcalli/nvim-colorizer.lua" },
-	{ "lewis6991/gitsigns.nvim" },
+	{ require("velasam.plugins.gitsigns") },
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
