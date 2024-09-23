@@ -1,3 +1,6 @@
+-- esc in terminal mode to go to normal mode
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
+
 -- CTRL + S to save
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<ESC>:w<CR>", { desc = "Save file" })
 
