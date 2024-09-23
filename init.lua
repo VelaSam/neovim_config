@@ -26,16 +26,4 @@ require("lazy").setup({
 --MAPPINGS
 require("velasam.mappings")
 
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
--- 	command = "NvimTreeToggle",
--- })
-
 vim.cmd.colorscheme("rose-pine-moon")
-
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
--- 	command = "Alpha",
--- })
---if you want the tree to be opened went you enter, uncomment these lines
--- vim.api.nvim_create_autocmd({"VimEnter"}, {
---   command = "NvimTreeToggle"
--- })
