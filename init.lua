@@ -34,4 +34,4 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 require("velasam.plugins.mason_lsps")
 require("velasam.plugins.mason_formatters")
 
-vim.cmd.colorscheme("carbonfox")
+vim.cmd.colorscheme("nordfox")
