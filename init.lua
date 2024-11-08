@@ -18,20 +18,8 @@ require("lazy").setup(require("velasam.plugins"))
 
 require("velasam.mappings")
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	command = "NvimTreeToggle",
-})
-
--- vim.api.nvim_create_autocmd({"VimEnter"}, {
---   command = "Alpha"
---  })
---if you want the tree to be opened went you enter, uncomment these lines
--- vim.api.nvim_create_autocmd({"VimEnter"}, {
---   command = "NvimTreeToggle"
--- })
-
 -- LSP / LINTING / FORMATTING
 require("velasam.plugins.mason_lsps")
 require("velasam.plugins.mason_formatters")
 
-vim.cmd.colorscheme("nordfox")
+vim.cmd.colorscheme("carbonfox")

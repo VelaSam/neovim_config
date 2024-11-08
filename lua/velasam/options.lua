@@ -4,8 +4,8 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = false
 
 -- -- disable netrw at the very start of your init.lua
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 --system clipboard
 vim.opt.clipboard = "unnamedplus"
@@ -15,10 +15,10 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 --indents
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.opt.tabstop = 4 -- Number of spaces a tab represents
+vim.opt.softtabstop = 4 -- Number of spaces a tab represents in insert mode
+vim.opt.shiftwidth = 4 -- Number of spaces to use for indentation
+vim.opt.expandtab = true -- Use spaces instead of actual tab characters
 
 vim.opt.wrap = false
 
@@ -42,6 +42,7 @@ vim.opt.splitbelow = true
 
 vim.opt.list = true
 vim.opt.listchars = { tab = "▸ ", trail = "■", nbsp = "␣" }
+vim.opt.fillchars = { eob = "~" }
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
