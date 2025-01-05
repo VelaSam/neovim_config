@@ -22,4 +22,4 @@ require("velasam.mappings")
 require("velasam.plugins.mason_lsps")
 require("velasam.plugins.mason_formatters")
 
-vim.cmd.colorscheme("carbonfox")
+-- vim.cmd.colorscheme("carbonfox")

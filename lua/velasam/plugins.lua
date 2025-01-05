@@ -13,7 +13,7 @@ return {
 	{ "EdenEast/nightfox.nvim" },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
-	{ "norcalli/nvim-colorizer.lua" },
+	-- { "norcalli/nvim-colorizer.lua" },
 	{ require("velasam.plugins.harpoon") },
 	{ require("velasam.plugins.gitsigns") },
 	{ require("velasam.plugins.hop") },
@@ -141,7 +141,7 @@ return {
 	{
 		"github/copilot.vim",
 		config = function()
-			vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
+			vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
 				expr = true,
 				replace_keycodes = false,
 			})
